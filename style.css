@@ -49,6 +49,7 @@ section.content p {
 .btn {
   display: inline-block;
   margin-top: 20px;
+  margin-bottom: 50px;
   padding: 10px 25px;
   background-color: #111;
   color: #fff;
@@ -59,6 +60,10 @@ section.content p {
 
 .btn:hover {
   background-color: #444;
+}
+
+.support-us {
+  margin-top: 50px;
 }
 
 footer {
