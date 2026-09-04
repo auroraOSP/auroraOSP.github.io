@@ -492,7 +492,7 @@ ul, ol { margin: 0; padding: 0; }
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: .625rem;
+  gap: .5rem;
   font-family: var(--font-brand);
   font-size: 1.1875rem;
   font-weight: 700;
@@ -501,7 +501,13 @@ ul, ol { margin: 0; padding: 0; }
   color: var(--md-on-surface);
   margin-right: auto;
 }
-.brand__mark { width: 30px; height: 30px; flex: none; }
+.brand__mark {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  object-fit: contain;
+  /* the mark's band separators are transparent, so it reads on either theme */
+}
 .brand em { font-style: normal; color: var(--md-primary); }
 
 .nav { display: flex; align-items: center; gap: .25rem; }

@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/m3.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="128x128">
+  <link rel="apple-touch-icon" href="assets/img/logo-512.png">
   <script>
     /* Runs before first paint: marks scripting available (so scroll-reveal can
        hide elements without stranding no-JS visitors) and applies the stored
@@ -25,11 +26,12 @@
     })();
   </script>
   <title>Downloads — AuroraOSP</title>
-  <meta name="description" content="Download AuroraOSP 1.0 for Pixel 9, 9 Pro, 9 Pro XL and Moto G 5G, in GMS, CORE or VANILLA flavours, with a step-by-step install guide.">
+  <meta name="description" content="Download AuroraOSP for Pixel 9, 9 Pro, 9 Pro XL and Motorola Edge, in GMS, CORE or VANILLA flavours, with a step-by-step install guide.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Downloads — AuroraOSP">
-  <meta property="og:description" content="Download AuroraOSP 1.0 for Pixel 9, 9 Pro, 9 Pro XL and Moto G 5G, in GMS, CORE or VANILLA flavours, with a step-by-step install guide.">
+  <meta property="og:description" content="Download AuroraOSP for Pixel 9, 9 Pro, 9 Pro XL and Motorola Edge, in GMS, CORE or VANILLA flavours, with a step-by-step install guide.">
   <meta property="og:site_name" content="AuroraOSP">
+  <meta property="og:image" content="assets/img/logo-512.png">
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -39,15 +41,8 @@
   <header class="appbar">
     <div class="wrap appbar__inner">
       <a class="brand" href="index.html">
-        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
-          <defs>
-            <linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#22d3a8"/><stop offset="1" stop-color="#6f7cff"/>
-            </linearGradient>
-          </defs>
-          <rect width="32" height="32" rx="9" fill="url(#bm)" opacity=".18"/>
-          <path d="M16 6.5 24.5 25h-4.2l-1.6-3.8h-5.4L11.7 25H7.5L16 6.5Zm0 7.6-1.6 3.8h3.2L16 14.1Z" fill="url(#bm)"/>
-        </svg>
+        <img class="brand__mark" src="assets/img/logo.png" width="320" height="320"
+             alt="" decoding="async">
         aurora<em>OSP</em>
       </a>
 
@@ -86,7 +81,7 @@
           Pick a device, <span class="grad">pick a build.</span>
         </h1>
         <p class="body-lg" style="max-width:58ch;color:var(--md-on-surface-variant)">
-          AuroraOSP 1.0 runs Android 17. Releases ship in three flavours: <b>GMS</b> with the full
+          AuroraOSP currently runs Android 17. Releases ship in three flavours: <b>GMS</b> with the full
           Google stack, <b>CORE</b> with a minimal set, and <b>VANILLA</b> with none of it. Same
           Aurora features in each.
         </p>
@@ -105,10 +100,10 @@
             <input type="search" id="device-search" placeholder="Search by name or codename…" autocomplete="off">
           </label>
 
-          <div class="chip-row" role="group" aria-label="Filter by build status">
+          <div class="chip-row" role="group" aria-label="Filter by availability">
             <button class="chip chip--filter" type="button" data-filter="all" aria-pressed="true">All</button>
-            <button class="chip chip--filter" type="button" data-filter="official" aria-pressed="false">Official</button>
-            <button class="chip chip--filter" type="button" data-filter="pending" aria-pressed="false">Pending</button>
+            <button class="chip chip--filter" type="button" data-filter="available" aria-pressed="false">Available now</button>
+            <button class="chip chip--filter" type="button" data-filter="soon" aria-pressed="false">Coming soon</button>
           </div>
         </div>
 
@@ -141,7 +136,7 @@
           <p class="overline">Installation</p>
           <h2 class="headline-lg">Flashing AuroraOSP</h2>
           <p class="body-lg">
-            A clean install from stock. If you're already on AuroraOSP, an OTA through
+            A clean install from stock instructions below. If you're already on AuroraOSP, an OTA through
             Updater is all you need.
           </p>
         </div>
@@ -149,7 +144,8 @@
         <ol class="steps">
           <li data-reveal><div>
             <b>Unlock the bootloader</b>
-            <p>Enable Developer options, turn on OEM unlocking and USB debugging, then run
+            <p>Enable Developer options, turn on OEM unlocking and USB debugging, then run in terminal
+            <code>adb reboot bootloader</code>, once in fasboot, in terminal run
             <code>fastboot flashing unlock</code>. This wipes the device.</p>
           </div></li>
           <li data-reveal><div>
@@ -158,9 +154,12 @@
             vendor, bootloader and radio partitions match.</p>
           </div></li>
           <li data-reveal><div>
-            <b>Boot the recovery image</b>
-            <p>Run <code>fastboot flash init_boot boot.img</code> for the recovery shipped with your
-            build, then boot into recovery.</p>
+            <b>flash the recovery image</b>
+            <p>Run
+            <code>flash.sh</code> if on Linux/macOS or
+            <code>flash.bat</code> if on Windows
+            from the extracted auroraOS_'device codename'-fastboot-'build date'.zip for the recovery
+            image shipped with our current or previous build, your device will automatically boot into recovery.</p>
           </div></li>
           <li data-reveal><div>
             <b>Factory reset</b>
@@ -169,13 +168,18 @@
           </div></li>
           <li data-reveal><div>
             <b>Sideload the package</b>
-            <p>Choose <em>Apply update from ADB</em>, then <code>adb sideload auroraOS-1.0-*.zip</code>
-            on your computer.</p>
+            <p>Choose <em>Apply update from ADB</em>, <em>Apply update from ADB</em>, then <code>adb sideload auroraOS-1.*-*.zip</code>
+            on your computer. * is just placeholders, it will be your actual OTA package name</p>
+          </div></li>
+          <li data-reveal><div>
+            <b>Additional package install prompt</b>
+            <p>If you have a custom kernel or none gapps package to install, you can select yes when prompted.</p>
+            <p>If nothing to install additional, select no.</p>
           </div></li>
           <li data-reveal><div>
             <b>Reboot</b>
-            <p>First boot takes a few minutes while ART optimises apps. Then open Aurora Hub and
-            make it yours.</p>
+            <p>First boot takes a minute or so. Setup your device through the setup wizard.
+            Open Aurora Hub in Settings and make it yours.</p>
           </div></li>
         </ol>
       </div>
@@ -235,7 +239,8 @@
           <details data-reveal>
             <summary>My device isn't listed. Can I build it myself?</summary>
             <div class="faq__body">
-              Yes — the whole tree is public. Sync against the AuroraOSP manifest on the
+              Kinda — the whole tree is not public. Apply for maintainorship and you will gain access to our source.
+              Sync against the AuroraOSP manifest on the
               <code>lineage-24.0</code> branch, add your device, vendor and kernel trees, and build.
               Official status is granted per maintainer per device, and means an OTA channel and a
               listing on this page — get in touch on Telegram.
@@ -262,15 +267,8 @@
       <div class="footer__grid">
         <div>
           <a class="brand" href="index.html" style="margin-bottom:1rem">
-            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
-              <defs>
-                <linearGradient id="fm" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#22d3a8"/><stop offset="1" stop-color="#6f7cff"/>
-                </linearGradient>
-              </defs>
-              <rect width="32" height="32" rx="9" fill="url(#fm)" opacity=".18"/>
-              <path d="M16 6.5 24.5 25h-4.2l-1.6-3.8h-5.4L11.7 25H7.5L16 6.5Zm0 7.6-1.6 3.8h3.2L16 14.1Z" fill="url(#fm)"/>
-            </svg>
+            <img class="brand__mark" src="assets/img/logo.png" width="320" height="320"
+                 alt="" decoding="async" loading="lazy">
             aurora<em>OSP</em>
           </a>
           <p class="body-md" style="color:var(--md-on-surface-variant);max-width:34ch">

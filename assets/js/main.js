@@ -157,11 +157,11 @@
     official: { label: 'Official', cls: 'chip--accent' },
     beta: { label: 'Beta', cls: 'chip--tertiary' },
     community: { label: 'Community', cls: 'chip--secondary' },
-    pending: { label: 'Pending', cls: '' }
+    pending: { label: 'Build pending', cls: '' }
   };
 
   function deviceCard(d) {
-    var badge = STATUS[d.status] || STATUS.community;
+    var badge = hasBuild(d) ? (STATUS[d.status] || STATUS.community) : STATUS.pending;
     var variants = (d.variants || []).map(function (v) {
       var pending = !v.url || v.url === '#';
       var style = pending ? 'btn--outlined is-pending' : (v.type === 'GMS' ? 'btn--filled' : 'btn--tonal');
@@ -194,10 +194,17 @@
       '</article>';
   }
 
+  function hasBuild(d) {
+    return (d.variants || []).some(function (v) { return v.url && v.url !== '#'; });
+  }
+
   function render() {
     var q = state.query.trim().toLowerCase();
     var list = state.data.filter(function (d) {
-      var matchesFilter = state.filter === 'all' || d.status === state.filter;
+      var matchesFilter =
+        state.filter === 'all' ||
+        (state.filter === 'available' && hasBuild(d)) ||
+        (state.filter === 'soon' && !hasBuild(d));
       var haystack = (d.name + ' ' + d.codename + ' ' + d.oem).toLowerCase();
       return matchesFilter && (!q || haystack.indexOf(q) !== -1);
     });
