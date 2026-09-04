@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1416" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5fafb" media="(prefers-color-scheme: light)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/m3.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <script>
+    /* Runs before first paint: marks scripting available (so scroll-reveal can
+       hide elements without stranding no-JS visitors) and applies the stored
+       theme so the page never flashes the wrong one. */
+    (function () {
+      var r = document.documentElement;
+      r.classList.add('js');
+      try {
+        var t = localStorage.getItem('aurora-theme');
+        if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <title>Downloads — AuroraOSP</title>
+  <meta name="description" content="Download AuroraOSP 1.0 for Pixel 9, 9 Pro, 9 Pro XL and Moto G 5G, in GMS, CORE or VANILLA flavours, with a step-by-step install guide.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Downloads — AuroraOSP">
+  <meta property="og:description" content="Download AuroraOSP 1.0 for Pixel 9, 9 Pro, 9 Pro XL and Moto G 5G, in GMS, CORE or VANILLA flavours, with a step-by-step install guide.">
+  <meta property="og:site_name" content="AuroraOSP">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header class="appbar">
+    <div class="wrap appbar__inner">
+      <a class="brand" href="index.html">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#22d3a8"/><stop offset="1" stop-color="#6f7cff"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="9" fill="url(#bm)" opacity=".18"/>
+          <path d="M16 6.5 24.5 25h-4.2l-1.6-3.8h-5.4L11.7 25H7.5L16 6.5Zm0 7.6-1.6 3.8h3.2L16 14.1Z" fill="url(#bm)"/>
+        </svg>
+        aurora<em>OSP</em>
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="downloads.html" aria-current="page">Downloads</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="Toggle theme">
+        <svg data-icon="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" hidden>
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+        <svg data-icon="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+        </svg>
+      </button>
+
+      <a class="btn btn--filled btn--sm appbar__cta" href="downloads.html">Get AuroraOSP</a>
+
+      <button class="icon-btn nav-toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" style="padding-bottom:2rem">
+      <div class="wrap">
+        <p class="overline">Downloads</p>
+        <h1 class="display-md" style="margin:.75rem 0 1.25rem;max-width:16ch">
+          Pick a device, <span class="grad">pick a build.</span>
+        </h1>
+        <p class="body-lg" style="max-width:58ch;color:var(--md-on-surface-variant)">
+          AuroraOSP 1.0 runs Android 17. Releases ship in three flavours: <b>GMS</b> with the full
+          Google stack, <b>CORE</b> with a minimal set, and <b>VANILLA</b> with none of it. Same
+          Aurora features in each.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+
+        <div class="dl-toolbar">
+          <label class="search">
+            <span class="visually-hidden">Search devices</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+            </svg>
+            <input type="search" id="device-search" placeholder="Search by name or codename…" autocomplete="off">
+          </label>
+
+          <div class="chip-row" role="group" aria-label="Filter by build status">
+            <button class="chip chip--filter" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip chip--filter" type="button" data-filter="official" aria-pressed="false">Official</button>
+            <button class="chip chip--filter" type="button" data-filter="pending" aria-pressed="false">Pending</button>
+          </div>
+        </div>
+
+        <p class="body-sm" id="device-count" style="color:var(--md-on-surface-variant);margin-bottom:1.25rem" aria-live="polite">Loading devices…</p>
+
+        <div class="grid grid--3" id="device-grid">
+          <div class="dl-empty" style="grid-column:1/-1"><p class="body-md">Loading device list…</p></div>
+        </div>
+
+        <div class="notice" style="margin-top:2.5rem" data-reveal>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>
+          </svg>
+          <div>
+            <b>Flashing a custom ROM wipes your device and can brick it.</b>
+            <p>
+              Unlocking the bootloader erases all user data and may void your warranty. Back up
+              first, make sure you're on the firmware version the build targets, and read your
+              device's thread before you start. You do this at your own risk.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ INSTALL -->
+    <section class="section" id="install" style="padding-top:0">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <p class="overline">Installation</p>
+          <h2 class="headline-lg">Flashing AuroraOSP</h2>
+          <p class="body-lg">
+            A clean install from stock. If you're already on AuroraOSP, an OTA through
+            Updater is all you need.
+          </p>
+        </div>
+
+        <ol class="steps">
+          <li data-reveal><div>
+            <b>Unlock the bootloader</b>
+            <p>Enable Developer options, turn on OEM unlocking and USB debugging, then run
+            <code>fastboot flashing unlock</code>. This wipes the device.</p>
+          </div></li>
+          <li data-reveal><div>
+            <b>Update to the required stock firmware</b>
+            <p>Flash the Android 17 stock build your device's AuroraOSP release targets, so the
+            vendor, bootloader and radio partitions match.</p>
+          </div></li>
+          <li data-reveal><div>
+            <b>Boot the recovery image</b>
+            <p>Run <code>fastboot flash init_boot boot.img</code> for the recovery shipped with your
+            build, then boot into recovery.</p>
+          </div></li>
+          <li data-reveal><div>
+            <b>Factory reset</b>
+            <p>Format data from recovery. Coming from another ROM without this step is the most
+            common cause of a bootloop.</p>
+          </div></li>
+          <li data-reveal><div>
+            <b>Sideload the package</b>
+            <p>Choose <em>Apply update from ADB</em>, then <code>adb sideload auroraOS-1.0-*.zip</code>
+            on your computer.</p>
+          </div></li>
+          <li data-reveal><div>
+            <b>Reboot</b>
+            <p>First boot takes a few minutes while ART optimises apps. Then open Aurora Hub and
+            make it yours.</p>
+          </div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================ FAQ -->
+    <section class="section section--tight" style="padding-top:0">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <p class="overline">Questions</p>
+          <h2 class="headline-lg">Before you flash</h2>
+        </div>
+
+        <div class="faq">
+          <details data-reveal>
+            <summary>What's the difference between GMS, CORE and VANILLA?</summary>
+            <div class="faq__body">
+              GMS builds include Google Play services, the Play Store and the Pixel app stack —
+              Now Playing, Live Caption, the Google dialer and so on. CORE trims that to a minimal
+              Google set. VANILLA ships none of it, so you can add microG or nothing at all. Every
+              Aurora feature is present in all three; only the Google components differ, and you
+              can't switch between them without a clean flash. GMS builds are published first —
+              CORE and VANILLA follow.
+            </div>
+          </details>
+
+          <details data-reveal>
+            <summary>Will banking apps and Google Wallet work?</summary>
+            <div class="faq__body">
+              AuroraOSP ships Play Integrity Fix and TrickyStore, which together pass BASIC and
+              DEVICE integrity on supported devices. STRONG integrity needs a valid keybox, which you
+              supply yourself — Aurora checks it against Google's revocation list on import and will
+              tell you if it's revoked rather than letting you wonder why attestation fails. Some
+              banking apps add their own root and bootloader checks on top.
+            </div>
+          </details>
+
+          <details data-reveal>
+            <summary>Do I need root?</summary>
+            <div class="faq__body">
+              No. Everything in Aurora Hub — theming, Quick Settings layout, the Now Bar, per-app
+              spoofing, Play Integrity Fix and TrickyStore — works without root. If you do want root,
+              KernelSU and Magisk are both known to work; installing either is on you.
+            </div>
+          </details>
+
+          <details data-reveal>
+            <summary>How do updates work?</summary>
+            <div class="faq__body">
+              Builds ship with an OTA updater that checks the official release channel. Updates
+              are seamless A/B where the device supports it, so you keep your data and reboot once.
+              A dirty flash between minor versions is fine; major version bumps are announced with
+              whatever clean-flash requirement applies.
+            </div>
+          </details>
+
+          <details data-reveal>
+            <summary>My device isn't listed. Can I build it myself?</summary>
+            <div class="faq__body">
+              Yes — the whole tree is public. Sync against the AuroraOSP manifest on the
+              <code>lineage-24.0</code> branch, add your device, vendor and kernel trees, and build.
+              Official status is granted per maintainer per device, and means an OTA channel and a
+              listing on this page — get in touch on Telegram.
+            </div>
+          </details>
+
+          <details data-reveal>
+            <summary>How do I go back to stock?</summary>
+            <div class="faq__body">
+              Download your device's stock factory image from the manufacturer and flash it with
+              their tool or <code>fastboot</code>. Relocking the bootloader afterwards requires a
+              fully stock, signed image on every partition — relocking on anything else will brick
+              the device.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" style="margin-bottom:1rem">
+            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+              <defs>
+                <linearGradient id="fm" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#22d3a8"/><stop offset="1" stop-color="#6f7cff"/>
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="9" fill="url(#fm)" opacity=".18"/>
+              <path d="M16 6.5 24.5 25h-4.2l-1.6-3.8h-5.4L11.7 25H7.5L16 6.5Zm0 7.6-1.6 3.8h3.2L16 14.1Z" fill="url(#fm)"/>
+            </svg>
+            aurora<em>OSP</em>
+          </a>
+          <p class="body-md" style="color:var(--md-on-surface-variant);max-width:34ch">
+            An open-source Android 17 distribution built on AOSP and LineageOS 24.0 — the Pixel experience, opened up.
+          </p>
+        </div>
+
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#team">Maintainers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Source</h4>
+          <ul>
+            <li><a href="https://github.com/auroraOSP" rel="noopener">GitHub</a></li>
+            <li><a href="https://gitlab.com/auroraOSP" rel="noopener">GitLab</a></li>
+            <li><a href="about.html#license">Licensing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://t.me/auroraOSP" rel="noopener">Telegram</a></li>
+            <li><a href="https://www.paypal.me/niv268" rel="noopener">Donate</a></li>
+            <li><a href="downloads.html#install">Install guide</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__base">
+        <p>&copy; <span data-year>2026</span> AuroraOSP. Released under the Apache License 2.0.</p>
+        <p>Android is a trademark of Google LLC. AuroraOSP is not affiliated with or endorsed by Google.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

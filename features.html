@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1416" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5fafb" media="(prefers-color-scheme: light)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/m3.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <script>
+    /* Runs before first paint: marks scripting available (so scroll-reveal can
+       hide elements without stranding no-JS visitors) and applies the stored
+       theme so the page never flashes the wrong one. */
+    (function () {
+      var r = document.documentElement;
+      r.classList.add('js');
+      try {
+        var t = localStorage.getItem('aurora-theme');
+        if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <title>Features — AuroraOSP</title>
+  <meta name="description" content="Every AuroraOSP feature documented: Liquid Glass, the reverse-engineered Now Bar, resizable Quick Settings, lock screen lyrics and depth, eight power menu styles, Play Integrity Fix and TrickyStore with keybox revocation checking.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Features — AuroraOSP">
+  <meta property="og:description" content="Every AuroraOSP feature documented: Liquid Glass, the reverse-engineered Now Bar, resizable Quick Settings, lock screen lyrics and depth, eight power menu styles, Play Integrity Fix and TrickyStore with keybox revocation checking.">
+  <meta property="og:site_name" content="AuroraOSP">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header class="appbar">
+    <div class="wrap appbar__inner">
+      <a class="brand" href="index.html">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#22d3a8"/><stop offset="1" stop-color="#6f7cff"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="9" fill="url(#bm)" opacity=".18"/>
+          <path d="M16 6.5 24.5 25h-4.2l-1.6-3.8h-5.4L11.7 25H7.5L16 6.5Zm0 7.6-1.6 3.8h3.2L16 14.1Z" fill="url(#bm)"/>
+        </svg>
+        aurora<em>OSP</em>
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="features.html" aria-current="page">Features</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="Toggle theme">
+        <svg data-icon="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" hidden>
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+        <svg data-icon="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+        </svg>
+      </button>
+
+      <a class="btn btn--filled btn--sm appbar__cta" href="downloads.html">Get AuroraOSP</a>
+
+      <button class="icon-btn nav-toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" style="padding-bottom:2rem">
+      <div class="wrap">
+        <p class="overline">Features</p>
+        <h1 class="display-md" style="margin:.75rem 0 1.25rem;max-width:18ch">
+          Every switch, <span class="grad">documented.</span>
+        </h1>
+        <p class="body-lg" style="max-width:62ch;color:var(--md-on-surface-variant)">
+          AuroraOSP's customisation lives in <b>Aurora Hub</b> — one searchable Material 3 surface
+          in Settings. Beyond it, Aurora reworks System UI, the launcher, the theme picker, files
+          and music. Here is what all of it actually does.
+        </p>
+      </div>
+    </section>
+
+    <nav class="subnav" aria-label="Feature categories">
+      <div class="wrap subnav__scroll">
+        <a href="#glass">Liquid Glass</a>
+        <a href="#nowbar">Now Bar</a>
+        <a href="#qs">Quick Settings</a>
+        <a href="#lockscreen">Lockscreen</a>
+        <a href="#powermenu">Power menu</a>
+        <a href="#themes">Themes</a>
+        <a href="#statusbar">Status bar</a>
+        <a href="#apps">Apps</a>
+        <a href="#gestures">Gestures &amp; sound</a>
+        <a href="#security">Security &amp; spoofing</a>
+      </div>
+    </nav>
+
+    <div class="wrap" style="padding-bottom:clamp(4rem,8vw,7rem)">
+
+      <!-- ============================================ LIQUID GLASS -->
+      <section class="cat" id="glass">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="4"/><path d="M7 8h6"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Liquid Glass</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">A translucent design language, applied consistently</p>
+          </div>
+        </div>
+
+        <p class="body-lg" style="max-width:66ch;color:var(--md-on-surface-variant);margin-bottom:2rem" data-reveal>
+          Liquid Glass is Aurora's own surface treatment: clear glass over the blurred backdrop,
+          picking up your wallpaper and matching your home screen icons. It isn't a single toggle
+          bolted onto one screen — it's implemented across the system, and every part of it can be
+          left on Default instead.
+        </p>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Quick Settings panel</b>
+            <span>Glass tiles over the blurred backdrop instead of filled tiles on a solid panel,
+            with glass-aware QS dialogs that stay legible on a narrow pane.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Volume dialog</b>
+            <span>The volume slider redrawn as glass over a blurred backdrop, matching your Quick
+            Settings, with its own blur intensity control.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Power menu</b>
+            <span>Liquid glass is one of eight power menu styles — see below.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Settings homepage</b>
+            <span>Four homepage layouts: stock Android, <em>Aurora</em> with rounded groups and a
+            user card, <em>Liquid Glass</em> over your wallpaper, and <em>Right Icons</em> with
+            icons aligned right. Plus an optional floating search bar pinned to the bottom of the
+            screen rather than sitting in the header.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Launcher and theme picker</b>
+            <span>The launcher options popup, the recents overview button, and the theme picker's
+            custom clock styles all follow the glass treatment, with themed icons that stay themed
+            under it.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Lock screen clocks and fingerprint</b>
+            <span>Glass custom clock styles, and a glass treatment for the fingerprint affordance
+            that drops its blur cleanly as the affordance fades out.</span>
+          </div></li>
+        </ul>
+      </section>
+
+      <!-- ============================================ NOW BAR -->
+      <section class="cat" id="nowbar">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon feature__icon--s">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="8" width="18" height="8" rx="4"/><circle cx="8" cy="12" r="1.6" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Now Bar</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">Live activities on the lock screen</p>
+          </div>
+        </div>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Reverse-engineered from scratch</b>
+            <span>Aurora implements Samsung's Now Bar independently, so live activities show up on
+            the lock screen on hardware that never shipped with One UI.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Live sports</b>
+            <span>Scores and game state pulled in and rendered in the bar, sized to fit rather than
+            falling back to an empty flag square when a feed has no data.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Live charger input</b>
+            <span>The actual charge rate going into the device shown on the lock screen while
+            plugged in.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Theme styles</b>
+            <span>The Now Bar has its own style options in Settings, so it can match the rest of
+            your lock screen instead of imposing a look.</span>
+          </div></li>
+        </ul>
+      </section>
+
+      <!-- ============================================ QUICK SETTINGS -->
+      <section class="cat" id="qs">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon feature__icon--t">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Quick Settings</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">Resizable tiles, a real layout editor, and blur</p>
+          </div>
+        </div>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Resize any tile, any direction</b>
+            <span>Tiles can be resized to any width <em>and</em> height — not just the two widths
+            stock allows. Each tile keeps its own height, and a tall tile stays tall in the
+            collapsed shade.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Tabbed live layout editor</b>
+            <span>A tile editor with a dedicated layout tab that applies changes live to the panel
+            you're actually looking at, rather than to a preview that drifts out of sync.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Page through every tile</b>
+            <span>Quick quick settings pages by height through the full tile set instead of
+            truncating at the first row, and settles cleanly when left between pages.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Blur customisation</b>
+            <span>Control how much the screen behind is blurred when you pull down Quick Settings
+            and notifications — independently from the launcher's drawer and recents blur.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Aurora tiles</b>
+            <span>Performance mode and PC Mode ship as Quick Settings tiles.</span>
+          </div></li>
+        </ul>
+      </section>
+
+      <!-- ============================================ LOCKSCREEN -->
+      <section class="cat" id="lockscreen">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Lockscreen</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">Lyrics, depth, edge light &amp; always-on display</p>
+          </div>
+        </div>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Live lyrics</b>
+            <span>Follow along with the song on the lock screen. Aurora's music app looks the lyrics
+            up online and publishes them <em>timed</em> to the media session, so System UI can track
+            the current line — choose how many lines stay on screen, hold on the last line, and keep
+            them up on the always-on display.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Depth effect</b>
+            <span>The clock is cut with the wallpaper's depth matte so your subject sits in front of
+            it, rendered on the clock side so it survives clock style changes and AOD.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Custom clock styles</b>
+            <span>Custom clock styles with their own fonts, including Liquid Glass variants, applied
+            live. Google's clock plugins are allowlisted, and the default clock is fully removed
+            from the hierarchy when a style is active rather than hidden behind it.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Custom shortcut affordances</b>
+            <span>Bind the lock screen shortcuts to any installed app through a custom app picker,
+            not just the short stock list — with affordance styles in the theme picker.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Themeable fingerprint</b>
+            <span>A themeable UDFPS icon and recognising animation, rendered through the device-entry
+            icon and played via the auth ripple, with ultrasonic sensor support.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Edge Light</b>
+            <span>Notification glow around the screen edges, coloured by the notification accent or
+            a custom colour.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Media Art</b>
+            <span>Album artwork on the lock screen during playback, with an adjustable blur level.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Pulse visualiser</b>
+            <span>An audio visualiser on the lock screen and ambient display — bars, fading blocks or
+            solid lines, with configurable bar count, rounded bars, and colour from lava lamp, album
+            art or the system accent.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Always-On Display scheduling</b>
+            <span>Always on, on a schedule, charge-only, or scheduled plus charging — with start and
+            end times, a screen-off AOD duration, and an animated transition.</span>
+          </div></li>
+        </ul>
+      </section>
+
+      <!-- ============================================ POWER MENU -->
+      <section class="cat" id="powermenu">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon feature__icon--s">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v9"/><path d="M6.5 6.5a8 8 0 1 0 11 0"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Power menu</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">Eight layouts, plus a live editor</p>
+          </div>
+        </div>
+
+        <div class="grid grid--4" style="margin-bottom:1.5rem">
+          <div class="card card--filled" data-reveal><b class="title-md">Grid</b><p class="body-sm" style="margin-top:.35rem;color:var(--md-on-surface-variant)">Two columns of labelled buttons — the stock layout.</p></div>
+          <div class="card card--filled" data-reveal data-reveal-delay="40"><b class="title-md">Capsule toolbar</b><p class="body-sm" style="margin-top:.35rem;color:var(--md-on-surface-variant)">One row of icons; overflow moves into a menu.</p></div>
+          <div class="card card--filled" data-reveal data-reveal-delay="80"><b class="title-md">Size hierarchy</b><p class="body-sm" style="margin-top:.35rem;color:var(--md-on-surface-variant)">Actions sized by how much they matter.</p></div>
+          <div class="card card--filled" data-reveal data-reveal-delay="120"><b class="title-md">Tonal outline</b><p class="body-sm" style="margin-top:.35rem;color:var(--md-on-surface-variant)">Outlined tonal buttons.</p></div>
+          <div class="card card--filled" data-reveal><b class="title-md">Vertical list</b><p class="body-sm" style="margin-top:.35rem;color:var(--md-on-surface-variant)">A single column, easy to reach one-handed.</p></div>
+          <div class="card card--filled" data-reveal data-reveal-delay="40"><b class="title-md">Bento grid</b><p class="body-sm" style="margin-top:.35rem;color:var(--md-on-surface-variant)">Mixed tile sizes in a packed grid.</p></div>
+          <div class="card card--filled" data-reveal data-reveal-delay="80"><b class="title-md">Colour tiles</b><p class="body-sm" style="margin-top:.35rem;color:var(--md-on-surface-variant)">No circles — rounded gradient tiles, sized by weight.</p></div>
+          <div class="card card--filled" data-reveal data-reveal-delay="120"><b class="title-md">Liquid glass</b><p class="body-sm" style="margin-top:.35rem;color:var(--md-on-surface-variant)">The glass treatment, on the power menu.</p></div>
+        </div>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Live editor</b>
+            <span>Rearrange the menu and see it change as you go. Emergency, Lockdown, Power off,
+            Restart and Bug report are all first-class actions.</span>
+          </div></li>
+        </ul>
+      </section>
+
+      <!-- ============================================ THEMES -->
+      <section class="cat" id="themes">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon feature__icon--t">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/><circle cx="9" cy="9.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="9.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="9.5" cy="15" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Themes &amp; fonts</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">Icons, wallpapers and a real font engine</p>
+          </div>
+        </div>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>System fonts that actually change</b>
+            <span>User-selected font overlays override the system fonts, including the
+            <code>variable-*</code> families that normally ignore them. Activities relaunch on
+            change so nothing is left half-styled, and the stock font keeps its name so
+            <em>Default</em> genuinely restores it.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Icon packs and status bar icons</b>
+            <span>Change app icons system-wide, and restyle the status bar Wi-Fi and signal icons
+            — including a Wi-Fi standard indicator, a data-disabled icon, and a "show 4G instead of
+            LTE" toggle. Icon overlays switch cleanly instead of stacking.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Live previews</b>
+            <span>The theme picker previews icons live, previews the depth effect, and scrolls
+            through clock styles — with a reset button on every slider.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Wallpapers</b>
+            <span>Downloadable live wallpapers discovered and installed from inside the picker, a
+            recent-wallpaper carousel, partner wallpapers read from every partner package, and
+            curated photo effects.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Boot animation</b>
+            <span>Import any <code>bootanimation.zip</code> with a live preview before applying, and
+            reset to the stock Aurora animation in one tap.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Privacy indicator</b>
+            <span>The camera and microphone privacy dot tinted with your accent colour, with stock
+            icon shapes preserved.</span>
+          </div></li>
+        </ul>
+      </section>
+
+      <!-- ============================================ STATUS BAR -->
+      <section class="cat" id="statusbar">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Status bar</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">Size, padding and what shows up in it</p>
+          </div>
+        </div>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Height and padding</b>
+            <span>Make the whole status bar taller or shorter, and set start and end padding
+            independently — useful for pushing content clear of a cutout. Zero keeps your screen's
+            default.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Status bar tuner</b>
+            <span>Show or hide individual status bar icons, including the battery preference.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Shade header actions</b>
+            <span>The date, clock and battery in the shade header are clickable, each with its own
+            destination.</span>
+          </div></li>
+        </ul>
+      </section>
+
+      <!-- ============================================ APPS -->
+      <section class="cat" id="apps">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon feature__icon--s">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><path d="M17.5 14v7M14 17.5h7"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Apps</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">Aurora reworks the ones you use daily</p>
+          </div>
+        </div>
+
+        <div class="grid grid--2" style="margin-bottom:1.5rem">
+          <article class="card card--filled" data-reveal>
+            <h3 class="title-lg" style="margin-bottom:.5rem">Music</h3>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">
+              Aurora's music player finds what your library is missing: it looks up lyrics online and
+              publishes them timed to the session for the lock screen, fetches missing cover art, and
+              finds artist and genre artwork — for one album or the whole library at once. Artwork
+              found online is cached and can be forgotten again.
+            </p>
+          </article>
+          <article class="card card--filled" data-reveal data-reveal-delay="60">
+            <h3 class="title-lg" style="margin-bottom:.5rem">Files</h3>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">
+              A real bin you can browse and restore from, Safe folder support, starred files, and a
+              Material 3 accent pill floating bar with Quick Share and the document scanner. Opens on
+              Recents, handles rotation, and knows when a provider refuses to trash something.
+            </p>
+          </article>
+          <article class="card card--filled" data-reveal>
+            <h3 class="title-lg" style="margin-bottom:.5rem">Launcher</h3>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">
+              Independent blur intensity for the app drawer and recents, themed icons for suggested
+              apps and recents tasks, live calendar and clock dynamic icons, a tightened bottom search
+              bar, and smartspace cards that fall back to options when a tap can't land.
+            </p>
+          </article>
+          <article class="card card--filled" data-reveal data-reveal-delay="60">
+            <h3 class="title-lg" style="margin-bottom:.5rem">Settings</h3>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">
+              Four homepage styles, a floating search bar, the profile icon moved beside the title, a
+              font picker whose default means default, and a rounded maximum battery capacity — with
+              a device-side override for a misreported design capacity.
+            </p>
+          </article>
+        </div>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Pixel stack, current</b>
+            <span>Google's Settings and System UI builds tracked to Android 17, with the Gemini live
+            screen share refiner, Now Playing, the dream weather complication, CHRE activity
+            recognition, contextual cursor, screen capture and the Columbus tap gesture (with a real
+            sensitivity slider) all wired into the graph.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>USB prompt</b>
+            <span>Plugging in a cable raises a proper bottom sheet for choosing the USB mode instead
+            of burying it in a notification.</span>
+          </div></li>
+        </ul>
+      </section>
+
+      <!-- ============================================ GESTURES & SOUND -->
+      <section class="cat" id="gestures">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon feature__icon--t">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V12m0-1a1.5 1.5 0 0 1 3 0v5a5 5 0 0 1-5 5h-1.6a5 5 0 0 1-4-2l-3-4a1.6 1.6 0 0 1 2.4-2.1L9 15"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Gestures, sound &amp; essentials</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">The everyday switches</p>
+          </div>
+        </div>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Shake and three-finger gestures</b>
+            <span>Shake to trigger an action with a sensitivity threshold, plus separate three-finger
+            swipe and long-press actions — bindable to 16 targets including app switch, voice search,
+            camera, last app, flashlight, screenshot, volume panel, clear notifications and ringer
+            mode cycling.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Disable button screenshot</b>
+            <span>Turn off the power + volume-down combo when it keeps firing by accident.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Per-app volume &amp; multi audio focus</b>
+            <span>An independent, remembered volume level per app, and the option to let several apps
+            play audio at once instead of one stealing focus.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Essential notifications</b>
+            <span>Nominate the apps that matter and Aurora keeps them grouped at the top of the
+            shade. Media resume controls expire faster and are dropped on reboot.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>GameSpace &amp; Sidebar</b>
+            <span>A gaming overlay with per-game handling, and an edge-swipe sidebar for quick access
+            to favourite apps over whatever is on screen.</span>
+          </div></li>
+        </ul>
+      </section>
+
+      <!-- ============================================ SECURITY -->
+      <section class="cat" id="security">
+        <div class="cat__head" data-reveal>
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="headline-md">Security &amp; spoofing</h2>
+            <p class="body-md" style="color:var(--md-on-surface-variant)">Play Integrity, attestation &amp; per-app properties</p>
+          </div>
+        </div>
+
+        <ul class="speclist">
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Play Integrity Fix</b>
+            <span>Build fingerprint spoofing with a built-in device preset as a fallback, a fetcher
+            that pulls the latest or canary Pixel Beta fingerprint on demand, and a documented
+            priority chain (<code>custom.pif.*</code> beats <code>pif.*</code>) so your own config
+            always wins. <code>first_api_level</code> is spoofed at the property layer in both Java
+            and native, and build fields can be spoofed reflectively.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>TrickyStore with revocation checking</b>
+            <span>Keybox management for key attestation that actually validates what you import:
+            Aurora checks the keybox against Google's revocation list and tells you plainly whether
+            it is <em>valid</em>, <em>revoked</em> (with the reason and serial), or unverifiable
+            because Google couldn't be reached. Invalid or expired keyboxes are refused rather than
+            silently installed. EC keyboxes load as Conscrypt-usable private keys, and the leaf-hack
+            path emits attestation tags in the right order.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Per-app spoofing</b>
+            <span>Present different device properties to individual apps, with built-in profiles for
+            ROG Phone 8 Pro, Galaxy S24 Ultra, Xiaomi 13 Pro, OnePlus 9 Pro, Black Shark 4 and Lenovo
+            Y700 — plus custom key/value presets you can save and reuse. Backed by a system-level app
+            spoof service rather than per-app hooks.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Attestation targeting</b>
+            <span>Apply attestation spoofing system-wide, or pick apps individually and import a
+            target list from a file. Auto, leaf-hack and certificate-generation modes per target.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Google Photos spoofing</b>
+            <span>Present as a supported Pixel to Google Photos for unlimited original-quality
+            backup.</span>
+          </div></li>
+          <li data-reveal><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span><div>
+            <b>Ignore window secure</b>
+            <span>Allow screenshots and screen recording in apps that block them, when you need to.</span>
+          </div></li>
+        </ul>
+      </section>
+
+    </div>
+
+    <section class="section section--tight">
+      <div class="wrap">
+        <div class="cta" data-reveal>
+          <h2 class="display-sm">All of it, on your device.</h2>
+          <p class="body-lg">Grab a build and see how much of Android was configurable all along.</p>
+          <div class="hero__actions">
+            <a class="btn btn--filled btn--lg" href="downloads.html">Download AuroraOSP</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" style="margin-bottom:1rem">
+            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+              <defs>
+                <linearGradient id="fm" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#22d3a8"/><stop offset="1" stop-color="#6f7cff"/>
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="9" fill="url(#fm)" opacity=".18"/>
+              <path d="M16 6.5 24.5 25h-4.2l-1.6-3.8h-5.4L11.7 25H7.5L16 6.5Zm0 7.6-1.6 3.8h3.2L16 14.1Z" fill="url(#fm)"/>
+            </svg>
+            aurora<em>OSP</em>
+          </a>
+          <p class="body-md" style="color:var(--md-on-surface-variant);max-width:34ch">
+            An open-source Android 17 distribution built on AOSP and LineageOS 24.0 — the Pixel experience, opened up.
+          </p>
+        </div>
+
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#team">Maintainers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Source</h4>
+          <ul>
+            <li><a href="https://github.com/auroraOSP" rel="noopener">GitHub</a></li>
+            <li><a href="https://gitlab.com/auroraOSP" rel="noopener">GitLab</a></li>
+            <li><a href="about.html#license">Licensing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://t.me/auroraOSP" rel="noopener">Telegram</a></li>
+            <li><a href="https://www.paypal.me/niv268" rel="noopener">Donate</a></li>
+            <li><a href="downloads.html#install">Install guide</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__base">
+        <p>&copy; <span data-year>2026</span> AuroraOSP. Released under the Apache License 2.0.</p>
+        <p>Android is a trademark of Google LLC. AuroraOSP is not affiliated with or endorsed by Google.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
