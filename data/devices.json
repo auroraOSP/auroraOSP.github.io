@@ -1,0 +1,77 @@
+{
+  "_comment": "Mirrors vendor/official_devices/OTA in the AuroraOSP tree. Build metadata (filename, size, date, sha256) is real; the pixeldrain URLs are incomplete in-tree and need the file id appended. VANILLA and CORE are placeholders upstream and are marked pending here.",
+  "android": "17",
+  "sdk": 37,
+  "lineage_base": "24.0",
+  "version": "1.0",
+  "devices": [
+    {
+      "codename": "caiman",
+      "name": "Pixel 9 Pro",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "official",
+      "version": "1.0",
+      "date": "2026-09-03",
+      "patch": "2026-08-01",
+      "variants": [
+        { "type": "GMS",     "size": "3.89 GB", "url": "https://pixeldrain.com/u/" },
+        { "type": "VANILLA", "size": "—",       "url": "#" },
+        { "type": "CORE",    "size": "—",       "url": "#" }
+      ],
+      "notes": "Tensor G4. Full Pixel stack including Now Playing and Call Screening.",
+      "changelog": "#"
+    },
+    {
+      "codename": "tokay",
+      "name": "Pixel 9",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "official",
+      "version": "1.0",
+      "date": "2026-08-28",
+      "patch": "2026-08-01",
+      "variants": [
+        { "type": "GMS",     "size": "3.88 GB", "url": "https://pixeldrain.com/u/" },
+        { "type": "VANILLA", "size": "—",       "url": "#" },
+        { "type": "CORE",    "size": "—",       "url": "#" }
+      ],
+      "notes": "Tensor G4. Full Pixel stack including Now Playing and Call Screening.",
+      "changelog": "#"
+    },
+    {
+      "codename": "racer",
+      "name": "Moto G 5G / One 5G Ace",
+      "oem": "Motorola",
+      "maintainer": "Niv",
+      "status": "official",
+      "version": "1.0",
+      "date": "2026-04-09",
+      "patch": "2026-04-01",
+      "variants": [
+        { "type": "GMS",     "size": "2.30 GB", "url": "https://pixeldrain.com/u/" },
+        { "type": "VANILLA", "size": "—",       "url": "#" },
+        { "type": "CORE",    "size": "—",       "url": "#" }
+      ],
+      "notes": "sm7250 platform. Behind the Pixel builds — VoLTE depends on carrier profile.",
+      "changelog": "#"
+    },
+    {
+      "codename": "komodo",
+      "name": "Pixel 9 Pro XL",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "pending",
+      "version": "1.0",
+      "date": "",
+      "patch": "",
+      "variants": [
+        { "type": "GMS",     "size": "—", "url": "#" },
+        { "type": "VANILLA", "size": "—", "url": "#" },
+        { "type": "CORE",    "size": "—", "url": "#" }
+      ],
+      "notes": "Officially supported — first build not published yet.",
+      "changelog": "#"
+    }
+  ]
+}
