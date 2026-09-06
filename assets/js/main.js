@@ -160,6 +160,17 @@
     pending: { label: 'Build pending', cls: '' }
   };
 
+  function fastbootRow(d) {
+    var fb = d.fastboot;
+    if (!fb || !fb.url || fb.url === '#') return '';
+    return '<a class="fastboot-row" href="' + esc(fb.url) + '" rel="noopener">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M12 3v10m0 0 3.5-3.5M12 13 8.5 9.5"/><rect x="4" y="15" width="16" height="6" rx="2"/>' +
+      '</svg>' +
+      '<span><b>Fastboot &amp; recovery</b>' +
+      '<em>Needed for a clean install &middot; ' + esc(fb.size) + '</em></span></a>';
+  }
+
   function deviceCard(d) {
     var badge = hasBuild(d) ? (STATUS[d.status] || STATUS.community) : STATUS.pending;
     var variants = (d.variants || []).map(function (v) {
@@ -191,6 +202,7 @@
         '</dl>' +
         (d.notes ? '<p class="body-sm" style="margin-bottom:1.25rem">' + esc(d.notes) + '</p>' : '') +
         '<div class="device-card__actions">' + variants + '</div>' +
+        fastbootRow(d) +
       '</article>';
   }
 

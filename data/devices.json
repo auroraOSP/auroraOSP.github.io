@@ -1,5 +1,5 @@
 {
-  "_comment": "Mirrors vendor/official_devices/OTA in the AuroraOSP tree. Only released devices are listed. GMS links are live; VANILLA and CORE are still placeholders upstream. A variant with url \"#\" renders as a disabled Soon button.",
+  "_comment": "Mirrors vendor/official_devices/OTA in the AuroraOSP tree. Only released devices are listed. Each device has an OTA variant list plus a fastboot recovery package used for step 3 of the install guide. A variant with url \"#\" renders as a disabled Soon button.",
   "android": "17",
   "sdk": 37,
   "lineage_base": "24.0",
@@ -32,7 +32,12 @@
         }
       ],
       "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
-      "changelog": "#"
+      "changelog": "#",
+      "fastboot": {
+        "filename": "auroraOS_caiman-fastboot-20260904.zip",
+        "size": "42.4 MB",
+        "url": "https://pixeldrain.com/api/file/ZRhSZPSs?download"
+      }
     },
     {
       "codename": "komodo",
@@ -61,7 +66,12 @@
         }
       ],
       "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
-      "changelog": "#"
+      "changelog": "#",
+      "fastboot": {
+        "filename": "auroraOS_komodo-fastboot-20260904.zip",
+        "size": "42.4 MB",
+        "url": "https://pixeldrain.com/api/file/SsHoiSC4?download"
+      }
     },
     {
       "codename": "tokay",
@@ -90,7 +100,12 @@
         }
       ],
       "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
-      "changelog": "#"
+      "changelog": "#",
+      "fastboot": {
+        "filename": "auroraOS_tokay-fastboot-20260904.zip",
+        "size": "42.4 MB",
+        "url": "https://pixeldrain.com/api/file/9AjZaEoK?download"
+      }
     }
   ]
 }

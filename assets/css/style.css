@@ -505,3 +505,30 @@
   text-decoration-thickness: 1px;
 }
 .card p a:hover, .prose a:hover, .faq__body a:hover { text-decoration-thickness: 2px; }
+
+/* Fastboot / recovery package — a secondary download under the OTA variants */
+.fastboot-row {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: .75rem;
+  padding: .7rem .9rem;
+  border-radius: var(--shape-md);
+  border: 1px dashed var(--md-outline-variant);
+  color: var(--md-on-surface-variant);
+  text-decoration: none;
+  transition: border-color var(--dur-short) var(--ease-standard),
+              background-color var(--dur-short) var(--ease-standard),
+              border-radius var(--dur-medium) var(--ease-spatial);
+}
+.fastboot-row:hover {
+  border-style: solid;
+  border-color: color-mix(in oklab, var(--md-primary) 55%, var(--md-outline-variant));
+  background: color-mix(in oklab, var(--md-primary) 7%, transparent);
+  border-radius: var(--shape-lg);
+  color: var(--md-on-surface);
+}
+.fastboot-row svg { width: 20px; height: 20px; flex: none; color: var(--md-primary); }
+.fastboot-row span { display: grid; min-width: 0; }
+.fastboot-row b { font-size: .8125rem; font-weight: 650; }
+.fastboot-row em { font-style: normal; font-size: .75rem; opacity: .8; }
