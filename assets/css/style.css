@@ -101,7 +101,7 @@
   position: relative;
   width: min(300px, 78%);
   margin-inline: auto;
-  aspect-ratio: 9 / 19.5;
+  aspect-ratio: 900 / 2008;   /* the preview screenshot's own ratio */
   border-radius: 44px;
   padding: 10px;
   background: linear-gradient(160deg, color-mix(in oklab, var(--md-outline) 60%, var(--md-surface-container-highest)), var(--md-surface-container-lowest));
@@ -115,64 +115,40 @@
   height: 100%;
   border-radius: 36px;
   overflow: hidden;
-  background:
-    radial-gradient(120% 70% at 50% 0%, color-mix(in oklab, var(--aurora-3) 42%, transparent), transparent 60%),
-    linear-gradient(180deg, #0a1a22, #061014 70%);
+  background: #0a1a22;
+}
+.phone__screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Pulse visualiser, overlaid where Aurora actually draws it: the foot of the
+   lock screen. Sits on a short scrim so the bars stay legible over wallpaper. */
+.phone__pulse {
+  position: absolute;
+  /* inset to the media pill's own width: any wider and the bars collide with
+     the flashlight and camera affordances sitting in the bottom corners */
+  left: 23%;
+  right: 23%;
+  bottom: 3.5%;
+  height: 4.5%;
   display: flex;
-  flex-direction: column;
-  padding: 1.5rem 1.125rem;
-  color: #e8f6f8;
+  align-items: flex-end;
+  gap: 2px;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / .55));
 }
-.phone__time { font-family: var(--font-brand); font-size: 3.25rem; font-weight: 700; letter-spacing: -.04em; line-height: 1; }
-.phone__date { font-size: .8125rem; opacity: .7; margin-top: .25rem; }
-
-.phone__chip {
-  margin-top: 1.125rem;
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  align-self: flex-start;
-  padding: .45rem .8rem;
-  border-radius: var(--shape-full);
-  background: rgb(255 255 255 / .13);
-  border: 1px solid rgb(255 255 255 / .12);
-  font-size: .7rem;
-  font-weight: 600;
-  backdrop-filter: blur(8px);
-}
-.phone__chip i {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--aurora-2);
-  box-shadow: 0 0 10px var(--aurora-2);
-  animation: blip 1.8s ease-in-out infinite;
-}
-@keyframes blip { 50% { opacity: .3; } }
-
-.phone__pulse { margin-top: auto; display: flex; align-items: flex-end; gap: 3px; height: 52px; }
 .phone__pulse span {
   flex: 1;
   height: 30%;
   border-radius: 3px;
-  background: linear-gradient(180deg, var(--aurora-1), var(--aurora-3));
+  background: linear-gradient(180deg, #d8f7ff, var(--aurora-1) 45%, var(--aurora-3));
   /* backwards fill: without it a bar has no height during its animation-delay
      and simply is not drawn, so most of the visualiser is missing on load */
   animation: pulse-bar 1.1s var(--ease-effects) infinite alternate backwards;
 }
-@keyframes pulse-bar { from { height: 30%; opacity: .7; } to { height: 100%; opacity: 1; } }
-
-.phone__tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-top: 1.125rem; }
-.phone__tiles i {
-  aspect-ratio: 1;
-  border-radius: 13px;
-  background: rgb(255 255 255 / .09);
-  border: 1px solid rgb(255 255 255 / .07);
-}
-.phone__tiles i:nth-child(1),
-.phone__tiles i:nth-child(4),
-.phone__tiles i:nth-child(6) {
-  background: linear-gradient(140deg, var(--aurora-1), var(--aurora-3));
-  border-color: transparent;
-}
+@keyframes pulse-bar { from { height: 22%; opacity: .75; } to { height: 100%; opacity: 1; } }
 
 /* --------------------------------------------------------------------------
    Feature grids

@@ -121,7 +121,7 @@
   /* -------------------------------------------------- phone mock pulse */
   var pulse = document.querySelector('.phone__pulse');
   if (pulse) {
-    for (var i = 0; i < 18; i++) {
+    for (var i = 0; i < 14; i++) {
       var bar = document.createElement('span');
       bar.style.animationDelay = (i * 65 % 700) + 'ms';
       bar.style.animationDuration = (900 + (i % 5) * 130) + 'ms';
