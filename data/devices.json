@@ -1,0 +1,96 @@
+{
+  "_comment": "Mirrors vendor/official_devices/OTA in the AuroraOSP tree. Only released devices are listed. GMS links are live; VANILLA and CORE are still placeholders upstream. A variant with url \"#\" renders as a disabled Soon button.",
+  "android": "17",
+  "sdk": 37,
+  "lineage_base": "24.0",
+  "version": "1.0",
+  "devices": [
+    {
+      "codename": "caiman",
+      "name": "Pixel 9 Pro",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "official",
+      "version": "1.0",
+      "date": "2026-09-04",
+      "patch": "2026-08-01",
+      "variants": [
+        {
+          "type": "GMS",
+          "size": "3.89 GB",
+          "url": "https://pixeldrain.com/u/xSRSZyDD"
+        },
+        {
+          "type": "VANILLA",
+          "size": "—",
+          "url": "#"
+        },
+        {
+          "type": "CORE",
+          "size": "—",
+          "url": "#"
+        }
+      ],
+      "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
+      "changelog": "#"
+    },
+    {
+      "codename": "komodo",
+      "name": "Pixel 9 Pro XL",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "official",
+      "version": "1.0",
+      "date": "2026-09-04",
+      "patch": "2026-08-01",
+      "variants": [
+        {
+          "type": "GMS",
+          "size": "3.89 GB",
+          "url": "https://pixeldrain.com/u/p4BcqbP8"
+        },
+        {
+          "type": "VANILLA",
+          "size": "—",
+          "url": "#"
+        },
+        {
+          "type": "CORE",
+          "size": "—",
+          "url": "#"
+        }
+      ],
+      "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
+      "changelog": "#"
+    },
+    {
+      "codename": "tokay",
+      "name": "Pixel 9",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "official",
+      "version": "1.0",
+      "date": "2026-09-04",
+      "patch": "2026-08-01",
+      "variants": [
+        {
+          "type": "GMS",
+          "size": "3.88 GB",
+          "url": "https://pixeldrain.com/u/UvK7Zv9L"
+        },
+        {
+          "type": "VANILLA",
+          "size": "—",
+          "url": "#"
+        },
+        {
+          "type": "CORE",
+          "size": "—",
+          "url": "#"
+        }
+      ],
+      "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
+      "changelog": "#"
+    }
+  ]
+}
