@@ -240,6 +240,19 @@
   if (searchInput) {
     searchInput.addEventListener('input', function () { state.query = this.value; render(); });
   }
+
+  /* Preload the device filter from the query string, e.g. downloads.html?device=caiman. */
+  (function () {
+    var preset = '';
+    try {
+      preset = new URLSearchParams(window.location.search).get('device') || '';
+    } catch (e) {
+      preset = '';
+    }
+    if (!preset) return;
+    state.query = preset;
+    if (searchInput) searchInput.value = preset;
+  })();
   document.querySelectorAll('[data-filter]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       state.filter = btn.getAttribute('data-filter');
