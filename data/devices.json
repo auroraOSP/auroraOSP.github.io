@@ -1,5 +1,11 @@
 {
-  "_comment": "Mirrors vendor/official_devices/OTA in the AuroraOSP tree. Only released devices are listed. Each device has an OTA variant list plus a fastboot recovery package used for step 3 of the install guide. A variant with url \"#\" renders as a disabled Soon button.",
+  "_comment": "Mirrors vendor/official_devices/OTA in the AuroraOSP tree. Only released devices are listed. Each device has an OTA variant list plus a fastboot recovery package used for step 3 of the install guide. A variant with url \"#\" renders as a disabled Soon button. The variant url, size, build date and patch level below are fallbacks: the page refreshes them from the live OTA manifests described by \"ota\" and only falls back to these when that fetch fails. Fastboot packages are not in the manifests, so those stay manual.",
+  "ota": {
+    "_comment": "Live release manifests, read straight from vendor/official_devices on GitHub. For each device and variant the page fetches <base>/<VARIANT>/<codename>.json and folds in the newest FULL package. Incremental-only manifests are ignored so the card keeps the last sideloadable package. Set \"enabled\": false to freeze the page on the values in this file, or add \"ota\": false to a single device to opt it out.",
+    "enabled": true,
+    "base": "https://raw.githubusercontent.com/auroraOSP/android_vendor_official_devices/refs/heads/main/OTA/device",
+    "variants": ["GMS", "CORE", "VANILLA"]
+  },
   "android": "17",
   "sdk": 37,
   "lineage_base": "24.0",

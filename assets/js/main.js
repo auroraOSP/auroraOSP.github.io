@@ -263,6 +263,137 @@
     });
   });
 
+  var OTA_TIMEOUT = 8000;
+
+  function fetchJson(url) {
+    var opts = {};
+    var timer = null;
+    if (typeof AbortController === 'function') {
+      var ctrl = new AbortController();
+      opts.signal = ctrl.signal;
+      timer = setTimeout(function () { ctrl.abort(); }, OTA_TIMEOUT);
+    }
+    function done() { if (timer) clearTimeout(timer); }
+    return fetch(url, opts).then(function (r) {
+      done();
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }, function (err) {
+      done();
+      throw err;
+    });
+  }
+
+  function usableUrl(u) {
+    if (typeof u !== 'string' || !/^https?:\/\//i.test(u)) return false;
+    var path = u.split(/[?#]/)[0].replace(/^https?:\/\/[^/]+/i, '');
+    return path !== '' && path !== '/' && path.slice(-1) !== '/';
+  }
+
+  function isoDay(seconds) {
+    var t = Number(seconds);
+    if (!isFinite(t) || t <= 0) return '';
+    return new Date(t * 1000).toISOString().slice(0, 10);
+  }
+
+  function fmtSize(bytes) {
+    var n = Number(bytes);
+    if (!isFinite(n) || n <= 0) return '';
+    if (n >= 1e9) return (n / 1e9).toFixed(2) + ' GB';
+    if (n >= 1e6) return (n / 1e6).toFixed(1) + ' MB';
+    return Math.round(n / 1e3) + ' KB';
+  }
+
+  function otaReleases(json) {
+    var entries = Array.isArray(json) ? json
+      : (json && Array.isArray(json.response) ? json.response : []);
+    var out = [];
+
+    entries.forEach(function (entry) {
+      if (!entry || typeof entry !== 'object') return;
+      var files = Array.isArray(entry.files) && entry.files.length ? entry.files : [entry];
+
+      files.forEach(function (f) {
+        if (f.type && f.type !== 'package') return;
+        var url = f.url || f.download || entry.url || entry.download;
+        if (!usableUrl(url)) return;
+
+        var when = Number(f.datetime || f.timestamp || entry.datetime || entry.timestamp) || 0;
+        out.push({
+          url: url,
+          incremental: entry.is_incremental === true || f.is_incremental === true ||
+            !!(entry.source_incremental || f.source_incremental),
+          when: when,
+          date: f.date || entry.date || isoDay(when),
+          size: fmtSize(f.size || entry.size),
+          patch: f.os_patch_level || entry.os_patch_level || '',
+          version: entry.version || f.version || ''
+        });
+      });
+    });
+
+    return out;
+  }
+
+  function newestFull(releases) {
+    return releases.filter(function (r) { return !r.incremental; })
+      .sort(function (a, b) { return b.when - a.when; })[0] || null;
+  }
+
+  function applyRelease(device, type, rel) {
+    var variant = null;
+    (device.variants || []).forEach(function (v) { if (v.type === type) variant = v; });
+    if (!variant) return false;
+
+    var pinned = variant.url && variant.url !== '#' ? variant.url : '';
+    if (pinned && rel.date && device.date && rel.date < device.date) return false;
+
+    var changed = false;
+    function set(obj, key, value) {
+      if (!value || obj[key] === value) return;
+      obj[key] = value;
+      changed = true;
+    }
+
+    set(variant, 'url', rel.url);
+    set(variant, 'size', rel.size);
+
+    /* Card-level rows track the newest build across the device's variants. */
+    if (rel.date && (!device.date || rel.date >= device.date)) {
+      set(device, 'date', rel.date);
+      set(device, 'patch', rel.patch);
+      set(device, 'version', rel.version);
+    }
+    return changed;
+  }
+
+  function refreshFromOta(cfg) {
+    if (!cfg || cfg.enabled === false || !cfg.base) return Promise.resolve(false);
+    var base = String(cfg.base).replace(/\/+$/, '');
+    var types = Array.isArray(cfg.variants) && cfg.variants.length ? cfg.variants : ['GMS'];
+    var jobs = [];
+
+    state.data.forEach(function (d) {
+      if (!d.codename || d.ota === false) return;
+      types.forEach(function (type) {
+        var listed = (d.variants || []).some(function (v) { return v.type === type; });
+        if (!listed) return;
+        jobs.push(
+          fetchJson(base + '/' + encodeURIComponent(type) + '/' + encodeURIComponent(d.codename) + '.json')
+            .then(function (json) {
+              var rel = newestFull(otaReleases(json));
+              return rel ? applyRelease(d, type, rel) : false;
+            })
+            .catch(function () { return false; })
+        );
+      });
+    });
+
+    return Promise.all(jobs).then(function (results) {
+      return results.some(Boolean);
+    });
+  }
+
   fetch('data/devices.json')
     .then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -271,11 +402,16 @@
     .then(function (json) {
       state.data = json.devices || [];
       render();
+      return json;
     })
     .catch(function () {
       dlGrid.innerHTML = '<div class="dl-empty" style="grid-column:1/-1">' +
         '<p class="title-md">Couldn\'t load the device list.</p>' +
         '<p class="body-md" style="margin-top:.5rem">If you opened this page from the filesystem, serve it over HTTP instead ' +
         '(<code>python3 -m http.server</code>) &mdash; browsers block <code>fetch</code> on <code>file://</code>.</p></div>';
-    });
+      return null;
+    })
+    .then(function (json) { return json ? refreshFromOta(json.ota) : false; })
+    .then(function (changed) { if (changed) render(); })
+    .catch(function () {});
 })();
