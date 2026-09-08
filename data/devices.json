@@ -40,9 +40,9 @@
       "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
       "changelog": "#",
       "fastboot": {
-        "filename": "auroraOS_caiman-fastboot-20260904.zip",
-        "size": "42.4 MB",
-        "url": "https://pixeldrain.com/api/file/ZRhSZPSs?download"
+        "filename": "auroraOS_caiman-fastboot-20260908.zip",
+        "size": "44.5 MB",
+        "url": "https://pixeldrain.com/api/file/oNqRnp32?download"
       }
     },
     {
@@ -74,9 +74,9 @@
       "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
       "changelog": "#",
       "fastboot": {
-        "filename": "auroraOS_komodo-fastboot-20260904.zip",
-        "size": "42.4 MB",
-        "url": "https://pixeldrain.com/api/file/SsHoiSC4?download"
+        "filename": "auroraOS_komodo-fastboot-20260908.zip",
+        "size": "44.5 MB",
+        "url": "https://pixeldrain.com/api/file/J8YvK82B?download"
       }
     },
     {
@@ -108,9 +108,9 @@
       "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
       "changelog": "#",
       "fastboot": {
-        "filename": "auroraOS_tokay-fastboot-20260904.zip",
-        "size": "42.4 MB",
-        "url": "https://pixeldrain.com/api/file/9AjZaEoK?download"
+        "filename": "auroraOS_tokay-fastboot-20260908.zip",
+        "size": "44.5 MB",
+        "url": "https://pixeldrain.com/api/file/zcFusTd3?download"
       }
     }
   ]
