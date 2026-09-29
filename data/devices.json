@@ -112,6 +112,40 @@
         "size": "44.5 MB",
         "url": "https://pixeldrain.com/api/file/zcFusTd3?download"
       }
+    },
+    {
+      "codename": "racer",
+      "name": "Motorola Edge (2020)",
+      "oem": "Motorola",
+      "maintainer": "Niv",
+      "status": "official",
+      "version": "1.0",
+      "date": "2026-09-29",
+      "patch": "2026-09-01",
+      "variants": [
+        {
+          "type": "GMS",
+          "size": "2.48 GB",
+          "url": "https://pixeldrain.com/api/file/FK2NZcAj?download"
+        },
+        {
+          "type": "VANILLA",
+          "size": "—",
+          "url": "#"
+        },
+        {
+          "type": "CORE",
+          "size": "—",
+          "url": "#"
+        }
+      ],
+      "notes": "Snapdragon 765G (sm7250).",
+      "changelog": "#",
+      "fastboot": {
+        "filename": "auroraOS_racer-fastboot-20260928.zip",
+        "size": "57.5 MB",
+        "url": "https://pixeldrain.com/api/file/Nz8jchBS?download"
+      }
     }
   ]
 }
