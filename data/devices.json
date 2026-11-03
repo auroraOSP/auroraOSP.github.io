@@ -4,7 +4,11 @@
     "_comment": "Live release manifests, read straight from vendor/official_devices on GitHub. For each device and variant the page fetches <base>/<VARIANT>/<codename>.json and folds in the newest FULL package. Incremental-only manifests are ignored so the card keeps the last sideloadable package. Set \"enabled\": false to freeze the page on the values in this file, or add \"ota\": false to a single device to opt it out.",
     "enabled": true,
     "base": "https://raw.githubusercontent.com/auroraOSP/android_vendor_official_devices/refs/heads/main/OTA/device",
-    "variants": ["GMS", "CORE", "VANILLA"]
+    "variants": [
+      "GMS",
+      "CORE",
+      "VANILLA"
+    ]
   },
   "android": "17",
   "sdk": 37,
@@ -18,13 +22,13 @@
       "maintainer": "Niv",
       "status": "official",
       "version": "1.0",
-      "date": "2026-09-04",
-      "patch": "2026-08-01",
+      "date": "2026-11-03",
+      "patch": "2026-10-01",
       "variants": [
         {
           "type": "GMS",
-          "size": "3.89 GB",
-          "url": "https://pixeldrain.com/u/xSRSZyDD"
+          "size": "3.88 GB",
+          "url": "https://dl.auroraosp.fyi/caiman/auroraOS-1.0-20261103-OFFICIAL-GMS-caiman.zip"
         },
         {
           "type": "VANILLA",
@@ -40,9 +44,9 @@
       "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
       "changelog": "#",
       "fastboot": {
-        "filename": "auroraOS_caiman-fastboot-20260908.zip",
-        "size": "44.5 MB",
-        "url": "https://pixeldrain.com/api/file/oNqRnp32?download"
+        "filename": "auroraOS_caiman-fastboot-20261103.zip",
+        "size": "44.6 MB",
+        "url": "https://dl.auroraosp.fyi/caiman/auroraOS_caiman-fastboot-20261103.zip"
       }
     },
     {
@@ -52,13 +56,13 @@
       "maintainer": "Niv",
       "status": "official",
       "version": "1.0",
-      "date": "2026-09-04",
-      "patch": "2026-08-01",
+      "date": "2026-11-03",
+      "patch": "2026-10-01",
       "variants": [
         {
           "type": "GMS",
-          "size": "3.89 GB",
-          "url": "https://pixeldrain.com/u/p4BcqbP8"
+          "size": "3.88 GB",
+          "url": "https://dl.auroraosp.fyi/komodo/auroraOS-1.0-20261103-OFFICIAL-GMS-komodo.zip"
         },
         {
           "type": "VANILLA",
@@ -74,9 +78,9 @@
       "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
       "changelog": "#",
       "fastboot": {
-        "filename": "auroraOS_komodo-fastboot-20260908.zip",
-        "size": "44.5 MB",
-        "url": "https://pixeldrain.com/api/file/J8YvK82B?download"
+        "filename": "auroraOS_komodo-fastboot-20261103.zip",
+        "size": "44.6 MB",
+        "url": "https://dl.auroraosp.fyi/komodo/auroraOS_komodo-fastboot-20261103.zip"
       }
     },
     {
@@ -86,13 +90,13 @@
       "maintainer": "Niv",
       "status": "official",
       "version": "1.0",
-      "date": "2026-09-04",
-      "patch": "2026-08-01",
+      "date": "2026-11-03",
+      "patch": "2026-10-01",
       "variants": [
         {
           "type": "GMS",
-          "size": "3.88 GB",
-          "url": "https://pixeldrain.com/u/UvK7Zv9L"
+          "size": "3.87 GB",
+          "url": "https://dl.auroraosp.fyi/tokay/auroraOS-1.0-20261103-OFFICIAL-GMS-tokay.zip"
         },
         {
           "type": "VANILLA",
@@ -108,9 +112,179 @@
       "notes": "Tensor G4. The full Google System UI, reverse engineered from CP2A.",
       "changelog": "#",
       "fastboot": {
-        "filename": "auroraOS_tokay-fastboot-20260908.zip",
+        "filename": "auroraOS_tokay-fastboot-20261103.zip",
         "size": "44.5 MB",
-        "url": "https://pixeldrain.com/api/file/zcFusTd3?download"
+        "url": "https://dl.auroraosp.fyi/tokay/auroraOS_tokay-fastboot-20261103.zip"
+      }
+    },
+    {
+      "codename": "tegu",
+      "name": "Pixel 9a",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "community",
+      "version": "1.0",
+      "date": "2026-11-03",
+      "patch": "2026-10-01",
+      "variants": [
+        {
+          "type": "GMS",
+          "size": "3.69 GB",
+          "url": "https://dl.auroraosp.fyi/tegu/auroraOS-1.0-20261103-COMMUNITY-GMS-tegu.zip"
+        },
+        {
+          "type": "VANILLA",
+          "size": "—",
+          "url": "#"
+        },
+        {
+          "type": "CORE",
+          "size": "—",
+          "url": "#"
+        }
+      ],
+      "notes": "Tensor G4.",
+      "changelog": "#",
+      "fastboot": {
+        "filename": "auroraOS_tegu-fastboot-20261103.zip",
+        "size": "42.8 MB",
+        "url": "https://dl.auroraosp.fyi/tegu/auroraOS_tegu-fastboot-20261103.zip"
+      }
+    },
+    {
+      "codename": "frankel",
+      "name": "Pixel 10",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "community",
+      "version": "1.0",
+      "date": "2026-11-03",
+      "patch": "2026-10-01",
+      "variants": [
+        {
+          "type": "GMS",
+          "size": "3.81 GB",
+          "url": "https://dl.auroraosp.fyi/frankel/auroraOS-1.0-20261103-COMMUNITY-GMS-frankel.zip"
+        },
+        {
+          "type": "VANILLA",
+          "size": "—",
+          "url": "#"
+        },
+        {
+          "type": "CORE",
+          "size": "—",
+          "url": "#"
+        }
+      ],
+      "notes": "Tensor G5.",
+      "changelog": "#",
+      "fastboot": {
+        "filename": "auroraOS_frankel-fastboot-20261103.zip",
+        "size": "43.7 MB",
+        "url": "https://dl.auroraosp.fyi/frankel/auroraOS_frankel-fastboot-20261103.zip"
+      }
+    },
+    {
+      "codename": "blazer",
+      "name": "Pixel 10 Pro",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "community",
+      "version": "1.0",
+      "date": "2026-11-03",
+      "patch": "2026-10-01",
+      "variants": [
+        {
+          "type": "GMS",
+          "size": "3.81 GB",
+          "url": "https://dl.auroraosp.fyi/blazer/auroraOS-1.0-20261103-COMMUNITY-GMS-blazer.zip"
+        },
+        {
+          "type": "VANILLA",
+          "size": "—",
+          "url": "#"
+        },
+        {
+          "type": "CORE",
+          "size": "—",
+          "url": "#"
+        }
+      ],
+      "notes": "Tensor G5.",
+      "changelog": "#",
+      "fastboot": {
+        "filename": "auroraOS_blazer-fastboot-20261103.zip",
+        "size": "43.7 MB",
+        "url": "https://dl.auroraosp.fyi/blazer/auroraOS_blazer-fastboot-20261103.zip"
+      }
+    },
+    {
+      "codename": "mustang",
+      "name": "Pixel 10 Pro XL",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "community",
+      "version": "1.0",
+      "date": "2026-11-03",
+      "patch": "2026-10-01",
+      "variants": [
+        {
+          "type": "GMS",
+          "size": "3.82 GB",
+          "url": "https://dl.auroraosp.fyi/mustang/auroraOS-1.0-20261103-COMMUNITY-GMS-mustang.zip"
+        },
+        {
+          "type": "VANILLA",
+          "size": "—",
+          "url": "#"
+        },
+        {
+          "type": "CORE",
+          "size": "—",
+          "url": "#"
+        }
+      ],
+      "notes": "Tensor G5.",
+      "changelog": "#",
+      "fastboot": {
+        "filename": "auroraOS_mustang-fastboot-20261103.zip",
+        "size": "43.7 MB",
+        "url": "https://dl.auroraosp.fyi/mustang/auroraOS_mustang-fastboot-20261103.zip"
+      }
+    },
+    {
+      "codename": "stallion",
+      "name": "Pixel 10a",
+      "oem": "Google",
+      "maintainer": "Niv",
+      "status": "community",
+      "version": "1.0",
+      "date": "2026-11-03",
+      "patch": "2026-10-01",
+      "variants": [
+        {
+          "type": "GMS",
+          "size": "3.78 GB",
+          "url": "https://dl.auroraosp.fyi/stallion/auroraOS-1.0-20261103-COMMUNITY-GMS-stallion.zip"
+        },
+        {
+          "type": "VANILLA",
+          "size": "—",
+          "url": "#"
+        },
+        {
+          "type": "CORE",
+          "size": "—",
+          "url": "#"
+        }
+      ],
+      "notes": "Tensor G4.",
+      "changelog": "#",
+      "fastboot": {
+        "filename": "auroraOS_stallion-fastboot-20261103.zip",
+        "size": "42.9 MB",
+        "url": "https://dl.auroraosp.fyi/stallion/auroraOS_stallion-fastboot-20261103.zip"
       }
     },
     {
