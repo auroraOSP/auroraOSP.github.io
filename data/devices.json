@@ -122,15 +122,15 @@
       "name": "Pixel 9a",
       "oem": "Google",
       "maintainer": "Niv",
-      "status": "community",
-      "version": "1.0",
-      "date": "2026-11-03",
-      "patch": "2026-10-01",
+      "status": "official",
+      "version": "1.1",
+      "date": "2026-11-10",
+      "patch": "2026-11-01",
       "variants": [
         {
           "type": "GMS",
           "size": "3.69 GB",
-          "url": "https://dl.auroraosp.fyi/tegu/auroraOS-1.0-20261103-COMMUNITY-GMS-tegu.zip"
+          "url": "https://dl.auroraosp.fyi/tegu/auroraOS-1.1-20261110-OFFICIAL-GMS-tegu.zip"
         },
         {
           "type": "VANILLA",
@@ -156,15 +156,15 @@
       "name": "Pixel 10",
       "oem": "Google",
       "maintainer": "Niv",
-      "status": "community",
-      "version": "1.0",
-      "date": "2026-11-03",
-      "patch": "2026-10-01",
+      "status": "official",
+      "version": "1.1",
+      "date": "2026-11-10",
+      "patch": "2026-11-01",
       "variants": [
         {
           "type": "GMS",
           "size": "3.81 GB",
-          "url": "https://dl.auroraosp.fyi/frankel/auroraOS-1.0-20261103-COMMUNITY-GMS-frankel.zip"
+          "url": "https://dl.auroraosp.fyi/frankel/auroraOS-1.1-20261110-OFFICIAL-GMS-frankel.zip"
         },
         {
           "type": "VANILLA",
@@ -190,15 +190,15 @@
       "name": "Pixel 10 Pro",
       "oem": "Google",
       "maintainer": "Niv",
-      "status": "community",
-      "version": "1.0",
-      "date": "2026-11-03",
-      "patch": "2026-10-01",
+      "status": "official",
+      "version": "1.1",
+      "date": "2026-11-10",
+      "patch": "2026-11-01",
       "variants": [
         {
           "type": "GMS",
           "size": "3.81 GB",
-          "url": "https://dl.auroraosp.fyi/blazer/auroraOS-1.0-20261103-COMMUNITY-GMS-blazer.zip"
+          "url": "https://dl.auroraosp.fyi/blazer/auroraOS-1.1-20261110-OFFICIAL-GMS-blazer.zip"
         },
         {
           "type": "VANILLA",
@@ -224,15 +224,15 @@
       "name": "Pixel 10 Pro XL",
       "oem": "Google",
       "maintainer": "Niv",
-      "status": "community",
-      "version": "1.0",
-      "date": "2026-11-03",
-      "patch": "2026-10-01",
+      "status": "official",
+      "version": "1.1",
+      "date": "2026-11-10",
+      "patch": "2026-11-01",
       "variants": [
         {
           "type": "GMS",
           "size": "3.82 GB",
-          "url": "https://dl.auroraosp.fyi/mustang/auroraOS-1.0-20261103-COMMUNITY-GMS-mustang.zip"
+          "url": "https://dl.auroraosp.fyi/mustang/auroraOS-1.1-20261110-OFFICIAL-GMS-mustang.zip"
         },
         {
           "type": "VANILLA",
@@ -258,15 +258,15 @@
       "name": "Pixel 10a",
       "oem": "Google",
       "maintainer": "Niv",
-      "status": "community",
-      "version": "1.0",
-      "date": "2026-11-03",
-      "patch": "2026-10-01",
+      "status": "official",
+      "version": "1.1",
+      "date": "2026-11-10",
+      "patch": "2026-11-01",
       "variants": [
         {
           "type": "GMS",
           "size": "3.78 GB",
-          "url": "https://dl.auroraosp.fyi/stallion/auroraOS-1.0-20261103-COMMUNITY-GMS-stallion.zip"
+          "url": "https://dl.auroraosp.fyi/stallion/auroraOS-1.1-20261110-OFFICIAL-GMS-stallion.zip"
         },
         {
           "type": "VANILLA",
